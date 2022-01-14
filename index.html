@@ -327,7 +327,10 @@
             //MIPS or ISO
             document.querySelectorAll('input[name=rtype]').forEach((option) => {
                 option.addEventListener('click', (evt) => { 
-                    arg.renderType = 0;
+                    if(option.value == 'iso')
+                        arg.renderType = 1;
+                    else
+                        arg.renderType = 0;
                     controlView.updateRGBA();
                 })
             })
